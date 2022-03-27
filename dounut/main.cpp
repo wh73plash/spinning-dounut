@@ -9,7 +9,6 @@ int32_t main(const int argc, const char** argv, const char** env) {
     int k;
     float z[1760];
     char b[1760];
-    std::printf("\x1b[2J");
     for(;;) {
        std::memset(b,32,1760);
        std::memset(z,0,7040);
@@ -35,14 +34,13 @@ int32_t main(const int argc, const char** argv, const char** env) {
                     b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
                 }
             }
-       }
-       std::printf("\x1b[H");
-       for(k = 0; k < 1761; k++) {
-           std::putchar(k % 80 ? b[k] : 10);
-           A += 0.00004;
-           B += 0.00002;
-       }
-       usleep(15000);
-   }// 아니 그냥 ... 집들어와서 물리공부하다가 심심해서 ...
-   return EXIT_SUCCESS;
+        }
+        for(k = 0; k < 1761; k++) {
+            std::putchar(k % 80 ? b[k] : 10);
+            A += 0.00004;
+            B += 0.00002;
+        }
+        usleep(30000);
+    }
+    return EXIT_SUCCESS;
 }
